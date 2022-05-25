@@ -130,6 +130,11 @@ onMounted(() => {
     }
   }
 
+  .empty-text {
+    margin: 10px auto;
+    width: 230px;
+  }
+
   .check-all {
     &__text {
       margin: 0 6px;
