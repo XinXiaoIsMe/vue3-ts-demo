@@ -1,7 +1,7 @@
 export default {
   app: {
     home: '主页',
-    todolist: '计划清单'
+    task: '任务'
   },
   todolist: {
     add: '添加',

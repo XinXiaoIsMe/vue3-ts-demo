@@ -1,17 +1,31 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n({ useScope: 'global' })
 
 interface ITask {
-  id: number;
-  content: string;
-  completed: boolean;
+  id: number
+  content: string
+  completed: boolean
 }
 
+interface IEvents {
+  (e: 'add', task: ITask): void
+  (e: 'remove', task: ITask): void
+  (e: 'check', task: ITask): void
+  (e: 'check-all', checked: boolean): void
+}
+
+const emits = defineEmits<IEvents>()
 const taskContent = ref('')
-const taskList = ref<ITask[]>([])
+const props = defineProps({
+  taskList: {
+    required: true,
+    type: Array as PropType<ITask[]>
+  }
+})
+const taskList = ref(props.taskList)
 const checkAll = computed({
   get () {
     return taskList.value.every(task => task.completed)
@@ -37,17 +51,25 @@ const addTask = (): void => {
 
   taskList.value.push(task)
   taskContent.value = ''
+  emits('add', task)
 }
 
 const removeTask = (id: number): ITask | undefined => {
   const task = taskList.value.find(t => t.id === id)
   taskList.value = taskList.value.filter(t => t !== task)
+  emits('remove', task!)
   return task
+}
+
+const onCheck = (task: ITask): void => {
+  emits('check', task)
 }
 
 const toggleTaskStatus = (e: Event) => {
   const oInput = e.target as HTMLInputElement
-  taskList.value.forEach(task => task.completed = oInput.checked)
+  const allChecked: boolean = oInput.checked
+  taskList.value.forEach(task => task.completed = allChecked)
+  emits('check-all', allChecked)
 }
 
 onMounted(() => {
@@ -70,7 +92,7 @@ onMounted(() => {
   </div>
   <div class="task-list" v-show="hasTask">
     <div class="task-item" v-for="task in taskList" :key="task.id">
-      <input type="checkbox" v-model="task.completed" />
+      <input type="checkbox" v-model="task.completed" @change="onCheck(task)" />
       <span :class="['task-content', { 'is-completed': task.completed }]">{{ task.content }}</span>
       <a href="javascript:;" @click="removeTask(task.id)">{{ t('todolist.delete') }}</a>
     </div>
@@ -110,6 +132,11 @@ onMounted(() => {
       border-radius: 5px;
       padding: 0;
       background-color: #fff;
+
+      &:hover {
+        background-color: var(--van-blue);
+        color: #fff;
+      }
     }
   }
 

@@ -1,7 +1,7 @@
 export default {
   app: {
     home: 'Home',
-    todolist: 'Todolist'
+    task: 'Task'
   },
   todolist: {
     add: 'Add',

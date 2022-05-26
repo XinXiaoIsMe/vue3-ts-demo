@@ -11,8 +11,8 @@ const routes: RouteRecordRaw[] = [
         component: ()  => import('@/views/Home.vue')
       },
       {
-        path: '/todolist',
-        component: ()  => import('@/views/Todolist.vue')
+        path: '/task',
+        component: ()  => import('@/views/Task.vue')
       }
     ]
   }

@@ -22,7 +22,7 @@ const lang = computed(() => locale.value === Lang.ENGLISH ? '英' : '中')
   <router-view />
   <van-tabbar v-model="activeTab" route>
     <van-tabbar-item name="home" to="/home" icon="home-o">{{ t('app.home') }}</van-tabbar-item>
-    <van-tabbar-item name="todolist" to="/todolist" icon="calendar-o">{{ t('app.todolist') }}</van-tabbar-item>
+    <van-tabbar-item name="task" to="/task" icon="calendar-o">{{ t('app.task') }}</van-tabbar-item>
   </van-tabbar>
 </div>
 </template>

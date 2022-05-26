@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': ^17.0.35
   '@vitejs/plugin-vue': ^2.3.3
-  dayjs: ^1.11.2
   pinia: ^2.0.14
   sass: ^1.52.1
   typescript: ^4.5.4
@@ -16,7 +15,6 @@ specifiers:
   vue-tsc: ^0.34.7
 
 dependencies:
-  dayjs: 1.11.2
   pinia: 2.0.14_7gwbvmtszsbbeay4sidijbp26i
   vant: 3.4.9_vue@3.2.36
   vue: 3.2.36
@@ -323,10 +321,6 @@ packages:
 
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
-    dev: false
-
-  /dayjs/1.11.2:
-    resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==}
     dev: false
 
   /debug/4.3.4:
