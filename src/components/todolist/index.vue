@@ -71,10 +71,6 @@ const toggleTaskStatus = (e: Event) => {
   taskList.value.forEach(task => task.completed = allChecked)
   emits('check-all', allChecked)
 }
-
-onMounted(() => {
-  if (inputRef.value) inputRef.value.focus()
-})
 </script>
 
 <template>
@@ -86,6 +82,7 @@ onMounted(() => {
       class="typing-input"
       v-model="taskContent"
       :placeholder="t('todolist.placeholder')"
+      v-focus
       @keyup.enter="addTask"
     >
     <button class="typing-btn" @click="addTask">{{ t('todolist.add') }}</button>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Lang } from '../lang/index'
+import { Lang } from '@/types/lang'
+import { localStorage } from '@/utils/storage'
 
 const { t } = useI18n({ useScope: 'global' })
 const activeTab = ref('home')
@@ -9,8 +10,9 @@ const { locale } = useI18n({ useScope: 'global' })
 
 const changeLang = (): void => {
   locale.value = locale.value === Lang.ENGLISH ? Lang.CHINESE : Lang.ENGLISH
+  localStorage.set('language', locale.value)
 }
-const lang = computed(() => locale.value === Lang.ENGLISH ? '英' : '中')
+const lang = computed(() => locale.value === Lang.ENGLISH ? 'En' : '中')
 </script>
 
 <template>

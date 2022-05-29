@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Todolist from '@/components/Todolist.vue'
+import Todolist from '@/components/todolist/index.vue'
 
 interface ITask {
   id: number

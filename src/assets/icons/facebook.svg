@@ -1,0 +1,9 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 106" width="58" height="106">
+	<title>Social Icon</title>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Social Icon">
+		<path id="Shape 5" class="shp0" d="M57.14 19.51L45.28 19.51C39.98 19.51 38.09 22.54 38.09 26.71L38.09 38.4L57.14 38.4L54.49 57.43L38.09 57.43L38.09 105.31L18.91 105.31L18.91 57.43L0.09 57.43L0.09 38.4L18.91 38.4L18.91 31.84C18.91 14.81 24.59 1.19 48.81 0.43L57.14 0.43L57.14 19.51Z" />
+	</g>
+</svg>

@@ -1,5 +1,7 @@
 export { 
   Button,
   Tabbar,
-  TabbarItem
+  TabbarItem,
+  Toast,
+  Popover
 } from 'vant'
